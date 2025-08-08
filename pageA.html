@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Page A</h1>
+    <a href="pageB.html">Go to Page B</a>
+    <script>
+      window.addEventListener('pageshow', (e) => {
+        console.log('pageshow fired, persisted =', e.persisted);
+      });
+    </script>
+  </body>
+</html>
