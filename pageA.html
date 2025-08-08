@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Page A - BFCache Test</title>
+    <title>Hash Change Test</title>
 </head>
 <body>
-  <h1>Page A</h1>
-  <p>This page is BFCache-friendly. Click below to go to Page B.</p>
-  <a href="pageB.html">Go to Page B</a>
-
-  <script>
-    window.addEventListener('pageshow', (e) => {
-      const msg = `pageshow.persisted = ${e.persisted}`;
-      console.log(msg);
-      document.body.insertAdjacentHTML('beforeend', `<p>${msg}</p>`);
-    });
-  </script>
+    <h1>Hash Change Test Page</h1>
+    <p>This page will change its URL's hash fragment without a full navigation.</p>
+    <button onclick="changeHash()">Change Hash</button>
+    <script>
+        function changeHash() {
+            // Append a new hash fragment to the URL
+            window.location.hash = "newSection" + Math.random().toString(36).substring(7);
+            console.log("Hash changed to:", window.location.href);
+        }
+    </script>
 </body>
 </html>
